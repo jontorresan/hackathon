@@ -24,10 +24,11 @@ var game = {
     // Run on game resources loaded.
     loaded: function () {
         // set the "Play/Ingame" Screen Object
+        me.state.set(me.state.MENU, new game.TitleScreen());
         this.playScreen = new game.PlayScreen();
         me.state.set(me.state.PLAY, this.playScreen);
 
         // start the game
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };
